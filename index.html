@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Sebastian Herrera Tola | Portafolio de Ingeniería Electrónica</title>
+    
+    <!-- Meta tags de SEO -->
+    <meta name="description" content="Portafolio profesional de Gabriel Sebastian Herrera Tola, estudiante de último semestre de Ingeniería Electrónica en la UMSA. Especialista en sistemas de control, programación de bajo nivel (x86 Assembly), FPGAs y automatización industrial.">
+    <meta name="keywords" content="Gabriel Sebastian Herrera Tola, Ingeniería Electrónica, Sistemas de Control, Assembly 8086, FPGA, VHDL, Verilog, SCADA, UMSA, La Paz, Bolivia, Microcontroladores, Automatización">
+    <meta name="author" content="Gabriel Sebastian Herrera Tola">
+    
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gabriel Sebastian Herrera Tola | Portafolio de Ingeniería Electrónica">
+    <meta property="og:description" content="Proyectos de bajo nivel en Assembly x86, automatización industrial, control, FPGAs y desarrollo de hardware-software.">
+    <meta property="og:url" content="https://sebaasu.github.io/">
+    <meta property="og:image" content="img/og-preview.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel Sebastian Herrera Tola | Portafolio de Ingeniería Electrónica">
+    <meta name="twitter:description" content="Proyectos de bajo nivel en Assembly x86, automatización industrial, control, FPGAs y desarrollo de hardware-software.">
+    
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas interactivo de fondo (Nodos electrónicos) -->
+    <canvas id="circuit-canvas"></canvas>
+
+    <!-- Barra de navegación sticky -->
+    <header class="main-header" id="header">
+        <div class="container navbar-container">
+            <a href="#" class="logo-link" id="nav-logo">
+                <span class="logo-accent">&lt;</span>GS<span class="logo-accent">.HT /&gt;</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#sobre-mi" class="nav-link" id="link-sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#habilidades" class="nav-link" id="link-habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos" class="nav-link" id="link-proyectos">Proyectos</a></li>
+                    <li><a href="#educacion" class="nav-link" id="link-educacion">Educación</a></li>
+                    <li><a href="#contacto" class="nav-link" id="link-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-accent glow-text" id="hero-badge">Ingeniería Electrónica &amp; Sistemas de Control</div>
+                <h1 class="hero-title" id="main-title">
+                    Gabriel Sebastian<br>
+                    <span class="gradient-text">Herrera Tola</span>
+                </h1>
+                <p class="hero-subtitle" id="hero-desc">
+                    Estudiante de último semestre de Ingeniería Electrónica en la Universidad Mayor de San Andrés. Apasionado por la programación de bajo nivel, la automatización industrial, el diseño con FPGAs y la matemática aplicada al control de sistemas.
+                </p>
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary" id="btn-hero-proyectos">
+                        <i class="fa-solid fa-code"></i> Explorar Proyectos
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary" id="btn-hero-contacto">
+                        <i class="fa-solid fa-envelope"></i> Contacto
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/Sebaasu" target="_blank" rel="noopener" class="social-icon-link" id="social-github" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/gsherrera" target="_blank" rel="noopener" class="social-icon-link" id="social-linkedin" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="circuit-grid-wrapper">
+                    <!-- Elemento visual interactivo 3D-like por CSS -->
+                    <div class="glowing-circle"></div>
+                    <div class="circuit-chip">
+                        <div class="chip-pin pin-t"></div>
+                        <div class="chip-pin pin-b"></div>
+                        <div class="chip-pin pin-l"></div>
+                        <div class="chip-pin pin-r"></div>
+                        <div class="chip-core">
+                            <i class="fa-solid fa-microchip chip-icon"></i>
+                            <span class="chip-text">8086 / FPGA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse-icon">
+                <span class="mouse-wheel"></span>
+            </span>
+            <span class="scroll-text">Deslizar</span>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section -->
+    <section class="section sobre-mi-section" id="sobre-mi">
+        <div class="container">
+            <h2 class="section-title text-center" id="title-sobre-mi">
+                <span class="section-title-num">01.</span> Sobre Mí
+            </h2>
+            <div class="about-grid">
+                <div class="about-text-card glass-card">
+                    <h3 class="card-subtitle gradient-text" id="about-intro">¿Quién soy?</h3>
+                    <p class="about-p">
+                        Soy un futuro Ingeniero Electrónico enfocado en el desarrollo de soluciones robustas que conectan el software de bajo nivel con el control de hardware físico. Me entusiasma descifrar cómo funcionan los sistemas a nivel de registros, optimizar el rendimiento y diseñar sistemas de automatización industrial integrados.
+                    </p>
+                    <p class="about-p">
+                        En el 2023, recibí el reconocimiento como uno de los <strong>Mejores Estudiantes de la Gestión</strong> en el Curso Básico de la Facultad de Ingeniería de la UMSA. Mi experiencia abarca desde el diseño lógico en HDL y el ensamblador puro hasta SCADA industriales, gemelos digitales y control en lazo cerrado de procesos neumáticos complejos.
+                    </p>
+                    <div class="interests-tags" id="about-interests">
+                        <h4 class="interests-title"><i class="fa-solid fa-heart"></i> Intereses principales:</h4>
+                        <div class="tags-container" id="interests-list">
+                            <!-- Inyectado dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats-card glass-card">
+                    <h3 class="card-subtitle" id="stats-heading">Logros Académicos y Perfil</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-num glow-text">UMSA</span>
+                            <span class="stat-label">Alma Mater</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num glow-text">C.B.</span>
+                            <span class="stat-label">Mejor Estudiante de Gestión (2023)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num glow-text">16-bit</span>
+                            <span class="stat-label">x86 Assembly Dev</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num glow-text">FPGA</span>
+                            <span class="stat-label">VHDL / Verilog</span>
+                        </div>
+                    </div>
+                    <div class="quote-box">
+                        <p class="quote-text">
+                            "Busco incorporarme a entornos de trabajo desafiantes y competitivos que pongan a prueba mis capacidades y permitan un crecimiento continuo tanto en lo académico como en el desarrollo tecnológico."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section class="section habilidades-section" id="habilidades">
+        <div class="container">
+            <h2 class="section-title text-center" id="title-habilidades">
+                <span class="section-title-num">02.</span> Habilidades Técnicas
+            </h2>
+            <p class="section-subtitle text-center" id="desc-habilidades">
+                Mi set de herramientas abarca desde lenguajes de descripción de hardware (HDL) hasta simulación matemática de sistemas dinámicos y desarrollo de software industrial.
+            </p>
+            
+            <div class="skills-tabs">
+                <button class="tab-btn active" id="tab-btn-lenguajes" data-tab="lenguajes">Lenguajes &amp; HDL</button>
+                <button class="tab-btn" id="tab-btn-hardware" data-tab="hardware">Hardware &amp; FPGAs</button>
+                <button class="tab-btn" id="tab-btn-software" data-tab="software">Software &amp; Simulación</button>
+                <button class="tab-btn" id="tab-btn-control" data-tab="control">Control &amp; SCADA</button>
+            </div>
+            
+            <div class="tab-content-container">
+                <div class="tab-panel active" id="panel-lenguajes">
+                    <div class="skills-grid" id="skills-lenguajes-list">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+                
+                <div class="tab-panel" id="panel-hardware">
+                    <div class="skills-grid" id="skills-hardware-list">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+                
+                <div class="tab-panel" id="panel-software">
+                    <div class="skills-grid" id="skills-software-list">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+                
+                <div class="tab-panel" id="panel-control">
+                    <div class="skills-grid" id="skills-control-list">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section class="section proyectos-section" id="proyectos">
+        <div class="container">
+            <h2 class="section-title text-center" id="title-proyectos">
+                <span class="section-title-num">03.</span> Proyectos Destacados
+            </h2>
+            <p class="section-subtitle text-center" id="desc-proyectos">
+                Una selección de desarrollos en ensamblador de bajo nivel, gemelos digitales y sistemas de automatización industrial con PLC.
+            </p>
+            
+            <!-- Proyectos clave en tarjetas -->
+            <div class="projects-filters">
+                <button class="filter-btn active" data-filter="all" id="filter-btn-all">Todos</button>
+                <button class="filter-btn" data-filter="bajo-nivel" id="filter-btn-bajo-nivel">Bajo Nivel (x86)</button>
+                <button class="filter-btn" data-filter="automatizacion" id="filter-btn-automatizacion">Automatización / SCADA</button>
+                <button class="filter-btn" data-filter="hardware-software" id="filter-btn-hardware-software">Hardware / Electrónica</button>
+            </div>
+            
+            <div class="projects-grid" id="projects-list">
+                <!-- Inyectado dinámicamente por JS -->
+            </div>
+            
+            <!-- Repositorios Online en GitHub -->
+            <div class="github-repos-section">
+                <h3 class="github-repos-title text-center" id="title-repos">
+                    <i class="fa-brands fa-github"></i> Repositorios Activos en GitHub
+                </h3>
+                <div class="repos-grid" id="github-repos-list">
+                    <!-- Inyectado dinámicamente por JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación y Experiencia Section -->
+    <section class="section educacion-section" id="educacion">
+        <div class="container">
+            <h2 class="section-title text-center" id="title-timeline">
+                <span class="section-title-num">04.</span> Trayectoria Académica y Laboral
+            </h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-col">
+                    <h3 class="timeline-header" id="heading-edu"><i class="fa-solid fa-graduation-cap"></i> Educación</h3>
+                    <div class="timeline" id="education-timeline">
+                        <!-- Inyectado por JS -->
+                    </div>
+                    
+                    <h3 class="timeline-header mt-4" id="heading-cert"><i class="fa-solid fa-award"></i> Certificados</h3>
+                    <div class="certificates-list" id="certificates-list">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+                
+                <div class="timeline-col">
+                    <h3 class="timeline-header" id="heading-exp"><i class="fa-solid fa-briefcase"></i> Experiencia Laboral</h3>
+                    <div class="timeline" id="experience-timeline">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="section contacto-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title text-center" id="title-contacto">
+                <span class="section-title-num">05.</span> Contacto
+            </h2>
+            <p class="section-subtitle text-center" id="desc-contacto">
+                ¿Tienes alguna consulta o estás interesado en trabajar juntos? Puedes contactarme a través de mis datos oficiales o enviarme un mensaje directo.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-info-card glass-card">
+                    <h3 class="card-subtitle gradient-text" id="contact-details-title">Datos Personales</h3>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Correo Electrónico</span>
+                            <a href="mailto:herrerotolagabrielsebastian@gmail.com" class="contact-value" id="contact-email">herrerotolagabrielsebastian@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Teléfono / WhatsApp</span>
+                            <a href="tel:+59176599253" class="contact-value" id="contact-phone">+591 76599253</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Ubicación</span>
+                            <span class="contact-value" id="contact-address">La Paz, Bolivia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="contact-detail">
+                            <span class="contact-label">Idiomas</span>
+                            <span class="contact-value" id="contact-languages">Español (Nativo), Inglés (Lectura Técnica Avanzada)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-card glass-card">
+                    <h3 class="card-subtitle" id="contact-form-title">Enviar un Mensaje</h3>
+                    <form class="contact-form" id="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Nombre Completo</label>
+                            <input type="text" id="form-name" class="form-input" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="form-email" class="form-input" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject" class="form-label">Asunto</label>
+                            <input type="text" id="form-subject" class="form-input" placeholder="Motivo de tu mensaje" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Mensaje</label>
+                            <textarea id="form-message" class="form-input" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                    <div class="form-status-msg" id="form-status" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container text-center">
+            <p class="footer-logo">&lt;GS.HT /&gt;</p>
+            <p class="footer-text">
+                Diseñado y desarrollado para Gabriel Sebastian Herrera Tola &copy; <span id="current-year">2026</span>.
+            </p>
+            <p class="footer-subtext">
+                Construido dinámicamente con Vanilla HTML, CSS y JS, compilado de datos YAML locales.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal de detalle de Proyecto (Aparece dinámicamente) -->
+    <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar modal">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Se rellena dinámicamente con JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
