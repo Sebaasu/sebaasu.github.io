@@ -12,7 +12,7 @@ const PORTFOLIO_DATA = {
       "linkedin": "https://linkedin.com/in/gsherrera",
       "github": "https://github.com/Sebaasu",
       "web_personal": "",
-      "portafolio": ""
+      "portafolio": "https://sebaasu.github.io/"
     },
     "proyectos_online": [
       {
@@ -44,6 +44,31 @@ const PORTFOLIO_DATA = {
         "nombre": "Simple Paint 8086",
         "url": "https://github.com/Sebaasu/simple-paint-8086",
         "descripcion": "Lienzo de dibujo libre en ensamblador x86 (16 bits) para MS-DOS/DOSBox en modo gráfico VGA, que implementa el algoritmo de línea de Bresenham con operaciones de solo enteros, control de cursor dinámico contra parpadeos y ciclado de paleta de colores."
+      },
+      {
+        "nombre": "Emu SIC",
+        "url": "https://github.com/Sebaasu/emu-sic",
+        "descripcion": "Small Instructional Computer (SIC) low level emulator based in Python"
+      },
+      {
+        "nombre": "Proceso Manufactura XK335B",
+        "url": "https://github.com/Sebaasu/proceso-manufactura-xk335b",
+        "descripcion": "Documentacion oficial de la Planta de Manufactura de la Universidad Mayor de San Andrés"
+      },
+      {
+        "nombre": "S7-200 Joystick Modbus",
+        "url": "https://github.com/Sebaasu/s7200-joystick-modbus",
+        "descripcion": "Proyecto de manejo con joystick de una Unidad de Transporte mediante protocolo modbus en plc s7-200. "
+      },
+      {
+        "nombre": "XK335B Digital Twin",
+        "url": "https://github.com/Sebaasu/xk335b-digital-twin",
+        "descripcion": "Desarrollo de un gemelo digital (simulador cinemático) para la estación de clasificación y ensamblaje mecatrónico XK335B, modelando el comportamien..."
+      },
+      {
+        "nombre": "XK335B Scada",
+        "url": "https://github.com/Sebaasu/xk335b-scada",
+        "descripcion": "Diseño y ejecución del sistema de automatización e integración de las 5 estaciones del proceso neumático de manufactura flexible de la planta XK-33..."
       }
     ]
   },
@@ -59,7 +84,10 @@ const PORTFOLIO_DATA = {
       "Zinjai",
       "Gowin IDE",
       "Step 7-Micro/WIN (Siemens)",
-      "OpenPLC Runtime"
+      "OpenPLC Runtime",
+      "AutoCAD Electrical",
+      "AutoCAD 3D",
+      "Tkinter (Python GUI)"
     ],
     "lenguajes_y_hdl": [
       "C++",
@@ -73,14 +101,17 @@ const PORTFOLIO_DATA = {
       "CUPL",
       "Assembler",
       "Ladder/STL",
-      "Structured Text (ST)"
+      "Structured Text (ST)",
+      "AWL (Statement List / STL)"
     ],
     "plataformas_hardware": [
       "Arduino",
       "ESP32",
       "PIC",
       "FPGA (Quartus/ISE/Gowin)",
-      "PLC Siemens S7-200"
+      "PLC Siemens S7-200",
+      "Servomotores (Panasonic Minas A4)",
+      "Variadores de Frecuencia (Powtran)"
     ],
     "pcb_design": [
       {
@@ -95,9 +126,11 @@ const PORTFOLIO_DATA = {
       "Telecomunicaciones básicas",
       "Sistemas SCADA y HMI",
       "Automatización de Procesos Neumáticos",
-      "Redes de Comunicación Industrial (Modbus TCP, RS-485)",
+      "Redes de Comunicación Industrial (Modbus TCP/RTU, RS-485, Red PPI)",
       "Gemelos Digitales (Digital Twins)",
-      "Redes de Petri"
+      "Redes de Petri",
+      "Diseño y Emulación de Procesadores (FSM, Registros)",
+      "Interpretación y diseño de planos P&ID y Eléctricos"
     ],
     "documentacion": [
       "LaTeX",
@@ -209,6 +242,49 @@ const PORTFOLIO_DATA = {
         ],
         "descripcion": "Diseño y ejecución del sistema de automatización e integración de las 5 estaciones del proceso neumático de manufactura flexible de la planta XK-335B (Transporte, Prensa, Ensamblaje, Clasificación y Selección). Modelado lógico del proceso mediante Redes de Petri y traducción a lenguaje Ladder/AWL, configuración del intercambio de datos inter-PLC (NETR/NETW), y desarrollo de un SCADA multihilo con HMI web para el monitoreo de consignas, conteo de piezas y gestión centralizada de seguridad física (parada de emergencia) vía RS-485.",
         "resultado": "Control y monitoreo distribuido exitoso de la planta neumática flexible, garantizando el handshake entre estaciones y la supervisión web unificada."
+      },
+      {
+        "id": "emu_sic",
+        "nombre": "EMU-SIC: Simulador e IDE del Procesador SIC",
+        "tipo": "Personal / Desarrollo de Software y Arquitectura de Computadoras",
+        "herramientas": [
+          "Python",
+          "Tkinter",
+          "FSM (Máquinas de Estado)",
+          "Arquitectura de Computadoras"
+        ],
+        "descripcion": "Diseño y desarrollo de un emulador educativo ciclo a ciclo del procesador SIC (Small Instructional Computer) basado en el texto clásico de Hill & Peterson. Implementa visualización en tiempo real del flujo de datos entre registros de la unidad de control y aritmética, desensamblador dinámico de código binario octal a mnemónicos, editor de código integrado y una pantalla de video emulada con soporte de color y blinking.",
+        "resultado": "Entorno de desarrollo funcional utilizado con fines de enseñanza que facilita la comprensión detallada de la arquitectura de hardware y la micro-programación."
+      },
+      {
+        "id": "s7200_joystick_modbus",
+        "nombre": "Control Proporcional y Gestión de Estación de Transporte con Joystick Modbus",
+        "tipo": "Personal / Integración de Sistemas y Automatización",
+        "herramientas": [
+          "Python",
+          "Modbus RTU",
+          "PLC Siemens S7-200",
+          "AWL (STL)",
+          "Comunicación Serie (RS-485)",
+          "Red PPI"
+        ],
+        "descripcion": "Desarrollo de una solución de control manual proporcional en tiempo real para una estación de transporte neumática y servo-asistida mediante un joystick USB. Un script puente en Python mapea ejes analógicos y botones, enviando señales Modbus RTU sobre RS-485 hacia un PLC Siemens S7-200. El PLC gestiona la trayectoria del servo (1k a 50k pulsos/s), handshakes inter-estación mediante la red PPI, límites de carrera redundantes y parada de seguridad autónoma por hardware.",
+        "resultado": "Control manual seguro y continuo con telemetría en tiempo real libre de parpadeo en consola."
+      },
+      {
+        "id": "proceso_manufactura_xk335b",
+        "nombre": "Documentación, Planos de Ingeniería y Gestión de la Planta Flexible XK-335B",
+        "tipo": "Académico / Gestión de Proyectos y Automatización Industrial",
+        "herramientas": [
+          "Git",
+          "AutoCAD Electrical",
+          "P&ID",
+          "Redes de Petri",
+          "Step 7-Micro/WIN",
+          "Markdown"
+        ],
+        "descripcion": "Diseño y administración del repositorio maestro de control y documentación técnica para la planta de manufactura flexible de la universidad. Incluye el dibujo y versionado de diagramas eléctricos en AutoCAD Electrical, planos P&ID, diagramas de flujos de proceso, bitácoras académicas semestrales y manuales de referencia teórica para la conversión estructurada de Redes de Petri a código Ladder.",
+        "resultado": "Establecimiento de un estándar de documentación inmutable y ordenado que garantiza la continuidad del laboratorio y la transferencia tecnológica."
       }
     ]
   },
@@ -251,7 +327,7 @@ const PORTFOLIO_DATA = {
         "descripcion": "Trabajo independiente relacionado con la carrera de ingeniería electrónica.",
         "logros": [
           "Reparación, análisis y mantenimiento de fuentes de alimentación conmutadas.",
-          "Fortalecimiento de conocimientos prácticos en electrónica analógica práctica."
+          "Fortalecimiento de habilidades en electrónica analógica aplicada y diagnóstico de fallas."
         ]
       },
       {
@@ -260,8 +336,8 @@ const PORTFOLIO_DATA = {
         "periodo": "2025-2026",
         "descripcion": "Servicio de cableado estructurado para oficinas y entornos industriales",
         "logros": [
-          "Experiancia con normas de seguridad en entornos industriales.",
-          "Trabajo bajo presion."
+          "Experiencia con normas de seguridad en entornos industriales.",
+          "Trabajo bajo presión."
         ]
       }
     ]
@@ -271,20 +347,20 @@ const PORTFOLIO_DATA = {
       {
         "titulo": "Curso de ensamblaje de PC y laptops",
         "institucion": "Instituto INFOCAL",
-        "periodo": "...",
+        "periodo": "I/2021",
         "archivo_respaldo": "recursos/certificados/certificado_infocal.pdf"
       },
       {
         "titulo": "Primer año de Sistemas Informáticos",
         "institucion": "Instituto INCOS",
-        "periodo": "...",
+        "periodo": "2020",
         "estado": "estudios congelados",
         "archivo_respaldo": "recursos/certificados/certificado_incos.pdf"
       },
       {
         "titulo": "Técnico Medio en Aplicaciones",
         "institucion": "Instituto ITEC",
-        "periodo": "...",
+        "periodo": "2015",
         "archivo_respaldo": "recursos/certificados/certificado_itec.jpg"
       }
     ]
